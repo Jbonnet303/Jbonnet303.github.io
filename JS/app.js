@@ -39,11 +39,30 @@ class Connect4 {
     setupEventListeners() {
       const $board = $(this.selector);
 
-      $board.on('mouseenter', '.col.empty', function() {
-        //const col = $(this).data('col');
-        //console.log(col);
+      function findLastEmptyCell(col) {
+        const cells = $(`.col[data-col='${col}']`);
+        for (let i = cells.length -1; i>=0; i--) {
+          const $cell =$(cells[i]);
+          if ($cell.hasClass ('empty')) {
+            return $cell;
+          }
+      }
 
-      console.log('here', this);
+      return null;
+    }
+
+      $board.on('mouseenter', '.col.empty', function() {
+        const col = $(this).data('col');
+        const $lastEmptyCell =findLastEmptyCell(col);
+        $lastEmptyCell.addClass('next-red');
+
+      // console.log('here', this);
     })
+
+    $board.on('mouseleave', '.col', function()  {
+      $('.col').removeClass(`next-red`);
+    })
+
+
   }
 }
