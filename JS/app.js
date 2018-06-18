@@ -11,8 +11,8 @@ const connect4 = new Connect4('#connect4')
 
 class Connect4 {
   constructor (selector) {
-    this.ROWS = 5;
-    this.COLS = 6;
+    this.ROWS = 6;
+    this.COLS = 7;
     this.selector = selector;
     this.createGrid();
     this.setupEventListeners();
@@ -22,15 +22,13 @@ class Connect4 {
     const $board = $(this.selector);
     for (let row = 0; row < this.ROWS; row++) {
     const $row = $('<div>')
-    .addClass('row');
+    .addClass('row empty');
     for (let col = 0; col < this.COLS; col++) {
     const $col = $('<div>')
-    .addClass('col empty');
-    $('.col.empty').attr('data-col', col)
-    $('.col.empty').attr('data-row', row);
+    .addClass('col empty')
+    .attr('data-col', col)
+    .attr('data-row', row);
 
-    // $('board').attr('data-col', col)
-    // $('board').attr('data-row', row);
 
     $row.append($col);
     }
