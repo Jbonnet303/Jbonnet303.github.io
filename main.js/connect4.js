@@ -1,23 +1,40 @@
 class Connect4 {
   constructor (selector) {
-    this.ROWS = 4;
-    this.COLS = 4;
-    // this.selector = selector;
-    // this.createGrid();
-    const $grid = selector;
+    this.ROWS = 5;
+    this.COLS = 6;
+    this.selector = selector;
     this.createGrid();
   }
 
   createGrid() {
     const $board = $(this.selector);
     for (let row = 0; row < this.ROWS; row++) {
-      const $row = $('<div>')
-      .addClass('row');
-      $board.append($row);
+    const $row = $('<div>')
+    .addClass('row');
+    for (let col = 0; col < this.COLS; col++) {
+    const $col = $('<div>')
+    .addClass('col empty');
+    $row.append($col);
     }
-      console.log($board.html());
+    $board.append($row);
+
     }
   }
+}
+
+
+
+
+//     for (let col = 0; row < this.COLS; col++) {
+//     const $col = $('<div>')
+//     .addClass('col empty');
+//     $row.append($col);
+//       }
+//     $board.append($row);
+//     }
+//     console.log($board.html());
+//   }
+// }
 
 
 
