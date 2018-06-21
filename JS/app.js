@@ -5,6 +5,10 @@ $(()  => {
     //Draw a grid
     const connect4 = new Connect4('#connect4')
 
+    connect4.onPlayerMove = function() {
+      $('#player').text(connect4.player);
+    }
+
     $('#restart').click(function() {
       connect4.restart();
   })
@@ -16,13 +20,13 @@ $(()  => {
     //Build grid
     //Create constructor
     constructor (selector) {
-
-
     this.ROWS = 6;
     this.COLS = 7;
     this.player = 'red';
     this.selector = selector;
-    this.createGrid();
+    this.gameOver = false;
+    this.onPlayerMove = function() {};
+    this.createBoard();
     this.setupEventListeners();
   }
 
@@ -30,14 +34,14 @@ $(()  => {
     //Create Method
     //Create rows and cols
 
-    createGrid() {
+    createBoard() {
 
     //Create rows
     //create div
     //Add class signaling empty
     const $board = $(this.selector);
     $board.empty();
-    this.isGameOver = false;
+    this.gameOver = false;
     this.player = 'red';
     for (let row = 0; row < this.ROWS; row++) {
     const $row = $('<div>')
@@ -91,6 +95,7 @@ $(()  => {
   //Add event listener
   //Highlight where game piece is dropped
   $board.on('mouseenter', '.col.empty', function() {
+  if (that.gameOver) return;
   const col = $(this).data('col');
   const $lastEmptyCell =findLastEmptyCell(col);
   $lastEmptyCell.addClass(`next-${that.player}`);
@@ -108,6 +113,7 @@ $(()  => {
   //What row and col is clicked
   //Add ability to switch players
   $board.on('click', '.col.empty', function() {
+  if (that.gameOver) return;
   const col = $(this).data('col');
   const row = $(this).data('row');
   const $lastEmptyCell = findLastEmptyCell(col);
@@ -121,13 +127,16 @@ $(()  => {
   $lastEmptyCell.data('col')
   )
 
-  if  (winner)  {
+  if  (winner) {
+  that.gameOver = true;
   alert(`Game over! Player ${that.player} has won!`);
+  $('.col.empty').removeClass('empty');
     return;
 }
 
 
   that.player = (that.player === 'red') ? 'black' : 'red';
+  that.onPlayerMove();
   $(this).trigger('mouseenter');
 
 
@@ -209,6 +218,7 @@ $(()  => {
 
 //Allows game to be restarted
   restart () {
-    this.createGrid();
+    this.createBoard();
+    this.onPlayerMove();
   }
 }
