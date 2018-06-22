@@ -2,33 +2,35 @@
 
 body {
   text-align: center;
-  background-image: url(https://4kwallpapers.co/wp-content/uploads/2015/07/supernova-explosion-4k-wallpaper.jpg);
+  background-image: url(http://www.freehdimages.in/uploads/large/desktop-hd-pictures-of-planets-in-space.jpg);
+  background-size: cover;
 }
 
 
 
 button {
-  font-weight: bolder;
-  color: black;
+  font-weight: bold;
+  color: rgb(16, 49, 116);
   font-size: 20px;
-  font-family: 'Francois One', sans-serif;
-  background-color: rgb(248, 251, 70);    /* added button color*/
-
+  font-family: 'Orbitron', sans-serif;, cursive;/*'Francois One', sans-serif; */
+  background-color:rgb(130, 178, 226, .4);
 }
 
 
 
 h1 {
 
-  font-family: 'Monoton', cursive;
-  color: rgb(41, 243, 132);
+  font-family: 'Orbitron', sans-serif;, cursive;/*'Monoton', cursive; */
+  color: rgb(13, 215, 47);
+  font-size: 45px;
 }
 
 
 
 h3 {
-  font-family: 'Monoton', cursive;
-  color: rgb(231, 66, 239);
+  font-family: 'Orbitron', sans-serif;, cursive;/*'Monoton', cursive;*/
+  color: rgb(16, 49, 116);
+  font-size: 30px;
 }
 
 
@@ -40,7 +42,7 @@ footer {
 
 
 #connect5 {
-  background-color: rgba(76, 82, 14, 0.65);
+  background-color: rgba(210, 250, 15, 0.10);
   display: inline-block;
 }
 
@@ -50,7 +52,7 @@ footer {
   width: 60px;
   height: 60px;
   display: inline-block;
-  background-color: rgba(0, 0, 0, 0.2);  /*white*/
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   margin: 5px;
 }
@@ -62,23 +64,26 @@ footer {
 
 
 
-.next-red {
-background-color: rgba(65, 219, 4, 0.20);
-/*rgba(255, 0, 0, 0.5); */
+.next-green {
+background-color: rgba(65, 219, 4, 0.50);
 }
 
 
 
-.col.red {
-  background-color: rgba(65, 219, 4, 0.40);   /*red*/
+.col.green {
+  background-image: url(http://sagemtn.org/wp-content/uploads/2017/04/wGGzFWc95tj5hmdHCpPFJFHk.jpeg);
+  background-size: cover;
+  opacity: 0.6;
 }
 
 
 .next-black {
-background-color: rgba(0, 0, 0, 0.5);
+background-color: rgba(0, 0, 0, .80);
 }
 
 
 .col.black {
-background-color: rgba(0, 0 ,0, 0.6)  /*  black */
+background-image: url(http://newinterestingfacts.com/wp-content/uploads/2016/05/jupiter-facts.jpg);
+background-size: cover;
+opacity: 0.6;
 }

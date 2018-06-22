@@ -20,9 +20,9 @@ $(()  => {
     //Build grid
     //Create constructor
     constructor (selector) {
-    this.ROWS = 8;  //6
-    this.COLS = 9;  //7
-    this.player = 'red';
+    this.ROWS = 8;
+    this.COLS = 9;
+    this.player = 'green';
     this.selector = selector;
     this.gameOver = false;
     this.onPlayerMove = function() {};
@@ -44,7 +44,7 @@ $(()  => {
     const $board = $(this.selector);
     $board.empty();
     this.gameOver = false;
-    this.player = 'red';
+    this.player = 'green';
     for (let row = 0; row < this.ROWS; row++) {
     const $row = $('<div>')
     .addClass('row');
@@ -137,7 +137,7 @@ $(()  => {
 }
 
 
-  that.player = (that.player === 'red') ? 'black' : 'red';
+  that.player = (that.player === 'green') ? 'black' : 'green';
   that.onPlayerMove();
   $(this).trigger('mouseenter');
 
@@ -184,7 +184,7 @@ $(()  => {
   const total = 1 +
   checkDirection(directionOne) +
   checkDirection(directionTwo);
-  if (total >= 5) {   //4
+  if (total >= 5) {
     return that.player;
     } else {
     return null;
