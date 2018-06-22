@@ -3,25 +3,25 @@
 $(()  => {
 
     //Draw a grid
-    const connect4 = new Connect4('#connect4')
+    const connect5 = new Connect5('#connect5')
 
-    connect4.onPlayerMove = function() {
-      $('#player').text(connect4.player);
+    connect5.onPlayerMove = function() {
+      $('#player').text(connect5.player);
     }
 
     $('#restart').click(function() {
-      connect4.restart();
+      connect5.restart();
   })
 });
 
     //Make class for game
-    class Connect4 {
+    class Connect5 {
 
     //Build grid
     //Create constructor
     constructor (selector) {
-    this.ROWS = 6;
-    this.COLS = 7;
+    this.ROWS = 8;  //6
+    this.COLS = 9;  //7
     this.player = 'red';
     this.selector = selector;
     this.gameOver = false;
@@ -36,9 +36,11 @@ $(()  => {
 
     createBoard() {
 
-    //Create rows
-    //create div
-    //Add class signaling empty
+
+    //Create div rows
+    //create new dom element
+    //Add class signaling
+
     const $board = $(this.selector);
     $board.empty();
     this.gameOver = false;
@@ -49,8 +51,8 @@ $(()  => {
 
 
     //Create cols/create div
-    //Create div
-    //Add class signaling empty
+    //Create new dom element
+    //Add class signalinng empty
     for (let col = 0; col < this.COLS; col++) {
     const $col = $('<div>')
     .addClass('col empty')
@@ -182,7 +184,7 @@ $(()  => {
   const total = 1 +
   checkDirection(directionOne) +
   checkDirection(directionTwo);
-  if (total >= 4) {
+  if (total >= 5) {   //4
     return that.player;
     } else {
     return null;

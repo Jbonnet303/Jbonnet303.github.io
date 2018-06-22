@@ -1,42 +1,84 @@
+
+
 body {
   text-align: center;
+  background-image: url(https://4kwallpapers.co/wp-content/uploads/2015/07/supernova-explosion-4k-wallpaper.jpg);
 }
+
+
+
+button {
+  font-weight: bolder;
+  color: black;
+  font-size: 20px;
+  font-family: 'Francois One', sans-serif;
+  background-color: rgb(248, 251, 70);    /* added button color*/
+
+}
+
+
+
+h1 {
+
+  font-family: 'Monoton', cursive;
+  color: rgb(41, 243, 132);
+}
+
+
+
+h3 {
+  font-family: 'Monoton', cursive;
+  color: rgb(231, 66, 239);
+}
+
+
 
 footer {
-  padding-top: 20px;
+  padding-top: 25px;
 }
 
-#connect4 {
-  background-color: skyblue;
+
+
+#connect5 {
+  background-color: rgba(76, 82, 14, 0.65);
   display: inline-block;
 }
+
+
 
 .col {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   display: inline-block;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.2);  /*white*/
   border-radius: 50%;
   margin: 5px;
 }
+
 
 .col.empty {
   cursor: pointer;
 }
 
+
+
 .next-red {
-background-color: rgba(255, 0, 0, 0.2);
+background-color: rgba(65, 219, 4, 0.20);
+/*rgba(255, 0, 0, 0.5); */
 }
 
+
+
 .col.red {
-  background-color: red;
+  background-color: rgba(65, 219, 4, 0.40);   /*red*/
 }
 
 
 .next-black {
-background-color: rgba(0, 0, 0, 0.2);
+background-color: rgba(0, 0, 0, 0.5);
 }
 
+
 .col.black {
-  background-color: black;
+background-color: rgba(0, 0 ,0, 0.6)  /*  black */
 }
