@@ -4,6 +4,11 @@ body {
   text-align: center;
   background-image: url(http://www.freehdimages.in/uploads/large/desktop-hd-pictures-of-planets-in-space.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: stretch;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 
