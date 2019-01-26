@@ -3,6 +3,7 @@
 body {
   text-align: center;
   background-image: url(https://thewire.in/wp-content/uploads/2017/11/space-1728314_1920.jpg);
+  background-opacity: .7;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: stretch;
